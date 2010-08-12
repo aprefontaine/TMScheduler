@@ -80,6 +80,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+#    'ragendja.auth.middleware.HybridAuthenticationMiddleware',
 #    'django.contrib.sessions.middleware.SessionMiddleware',
 #    'django.contrib.auth.middleware.AuthenticationMiddleware',
 #    'django.middleware.doc.XViewMiddleware',
@@ -102,9 +103,15 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
      'appengine_django',
-     'test',
+     'tasks',
 #    'django.contrib.auth',
 #    'django.contrib.contenttypes',
 #    'django.contrib.sessions',
 #    'django.contrib.sites',
 )
+
+# Change the User model class
+#AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
+
+# Add google_login_url and google_logout_url tags
+#GLOBALTAGS = ('ragendja.templatetags.googletags',)
