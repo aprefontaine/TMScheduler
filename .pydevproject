@@ -9,6 +9,6 @@
 <value>src/TMScheduler/manage.py</value>
 </pydev_variables_property>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
-<path>/TMScheduler/src</path>
+<path>/tmscheduler/src</path>
 </pydev_pathproperty>
 </pydev_project>
