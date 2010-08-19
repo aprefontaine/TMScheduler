@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+
+{% ifnotequal task_name "" %}
+<p>Successfully added task</p>
+{% endifnotequal %}
+
+
+test tasks index
+
+
+<table>
+	<tr>
+		<td>Name</td>
+	</tr>
+	{% for nextTask in task_list %}
+	<tr>
+		<td>{{nextTask.name}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<a href="new">new</a>
+
+</body>
+</html>

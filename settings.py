@@ -1,65 +1,21 @@
-# Django settings for tmscheduler project.
+try:
+    from djangoappengine.settings_base import *
+    has_djangoappengine = True
+except ImportError:
+    has_djangoappengine = False
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
+import os
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
-
-MANAGERS = ADMINS
-
-DATABASE_ENGINE = ''           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = ''             # Or path to database file if using sqlite3.
-#Setup for a relational db. Not using for now.
-#DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#DATABASE_NAME = 'C:/Users/Andre/workspace/tmscheduler_rel/sqlite3.db'             # Or path to database file if using sqlite3.
-DATABASE_USER = ''             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
-
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
-TIME_ZONE = 'America/Chicago'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
-
-SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
-
-# Absolute path to the directory that holds media.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'o!=_2acvcn6g^*9j7%xvpmpc)ujhr7d0hed6m=5u0kd4$3cwsh'
-
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+INSTALLED_APPS = (
+    'djangotoolbox',
+#    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'tasks',
+    'clubs'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,31 +25,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'tmscheduler.urls'
+if has_djangoappengine:
+    INSTALLED_APPS = ('djangoappengine',) + INSTALLED_APPS
 
-#TEMPLATE_CONTEXT_PROCESSORS = (
-#    "django.contrib.auth.context_processors.auth",
-#    "django.core.context_processors.debug",
-#    "django.core.context_processors.i18n",
-#    "django.core.context_processors.media",
-#    "django.contrib.messages.context_processors.messages"
-#)
+TEST_RUNNER = 'djangotoolbox.test.CapturingTestSuiteRunner'
 
-TEMPLATE_DIRS = (
-    "C:/Users/Andre/workspace/tmscheduler/templates",                 
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
+TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
 
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.admin',
-    'tmscheduler.clubs',  
-# 1.2   'django.contrib.messages',  
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-)
+ROOT_URLCONF = 'urls'
