@@ -1,4 +1,4 @@
-# Django settings for tmscheduler_rel project.
+# Django settings for tmscheduler project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -9,8 +9,11 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'C:/Users/Andre/workspace/tmscheduler_rel/sqlite3.db'             # Or path to database file if using sqlite3.
+DATABASE_ENGINE = ''           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = ''             # Or path to database file if using sqlite3.
+#Setup for a relational db. Not using for now.
+#DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#DATABASE_NAME = 'C:/Users/Andre/workspace/tmscheduler_rel/sqlite3.db'             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -66,7 +69,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'tmscheduler_rel.urls'
+ROOT_URLCONF = 'tmscheduler.urls'
 
 #TEMPLATE_CONTEXT_PROCESSORS = (
 #    "django.contrib.auth.context_processors.auth",
@@ -77,7 +80,7 @@ ROOT_URLCONF = 'tmscheduler_rel.urls'
 #)
 
 TEMPLATE_DIRS = (
-    "C:/Users/Andre/workspace/tmscheduler_rel/templates",                 
+    "C:/Users/Andre/workspace/tmscheduler/templates",                 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -89,7 +92,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'tmscheduler_rel.clubs',  
+    'tmscheduler.clubs',  
 # 1.2   'django.contrib.messages',  
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',

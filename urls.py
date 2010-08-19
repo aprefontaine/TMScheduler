@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^club/?', include('tmscheduler_rel.clubs.urls')),
+    (r'^club/?', include('tmscheduler.clubs.urls')),
     (r'^admin/', include(admin.site.urls)),
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
