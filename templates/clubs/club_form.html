@@ -1,0 +1,20 @@
+<html>
+<body>
+<h1>Create Club</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/club/add/" method="post">
+	<label for="clubNameEntry">Name:</label>
+	<input type="text" id="clubNameEntry" name="clubName"><br/>
+	<label for="clubNumberEntry">Number:</label>
+	<input type="text" id="clubNumberEntry" name="clubNumber"><br/>
+	<label for="clubAreaEntry">Area:</label>
+	<input type="text" id="clubAreaEntry" name="clubArea"><br/>
+	<label for="clubDivisionEntry">Division:</label>
+	<input type="text" id="clubDivisionEntry" name="clubDivision"><br/>
+<input type="submit" value="Add Club" />
+</form>
+</body>
+</html>
+

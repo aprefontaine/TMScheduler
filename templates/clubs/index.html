@@ -1,0 +1,13 @@
+<h1>Clubs Home</h1>
+
+{% ifnotequal club_name "" %}
+<p>Successfully added club</p>
+{% endifnotequal %}
+
+<h2>Club List</h2>
+<table>
+<tr><td>Name</td><td>Number</td><td>Area</td><td>Division</td></tr>
+{% for nextClub in club_list %}
+<tr><td>{{nextClub.Name}}</td><td>{{nextClub.Number}}</td><td>{{nextClub.Area}}</td><td>{{nextClub.Division}}</td></tr>
+{% endfor %}
+</table>
