@@ -5,7 +5,6 @@ except ImportError:
     has_djangoappengine = False
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
-
 import os
 
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
@@ -18,8 +17,6 @@ INSTALLED_APPS = (
     'tasks',
     'clubs'
 )
-
-
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',

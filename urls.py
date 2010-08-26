@@ -5,6 +5,4 @@ urlpatterns = patterns('',
      {'template': 'home.html'}),
     (r'^tasks/', include('tasks.urls')),
     (r'^clubs/', include('clubs.urls')),
-
-    
 )
