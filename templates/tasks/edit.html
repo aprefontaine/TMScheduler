@@ -1,0 +1,8 @@
+edit {{task.name}} here;
+<form action="/tasks/update/" method="post">
+{% csrf_token %}
+Task name: <input type="text" name="task_name" id="task_name" value="{{task.name}}" size=100 />
+Task notes:<Br> <textarea name="task_notes" id="task_notes" value="" rows="10" cols="30" >{{task.notes}}</textarea>
+<input type="hidden" name="task_id" id="task_id" value="{{task.id}}"/>
+<input type="submit" value="update" />
+</form>

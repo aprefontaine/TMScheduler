@@ -13,4 +13,7 @@ urlpatterns = patterns('',
         (r'^$', 'tasks.views.index'),
         (r'^new/$', 'tasks.views.new'),
         (r'^create/$', 'tasks.views.create'),
+        (r'^(?P<task_id>\d+)/$', 'tasks.views.show'),
+        (r'^edit/(?P<task_id>\d+)/$', 'tasks.views.edit'),
+        (r'^update/$', 'tasks.views.update'),
 )

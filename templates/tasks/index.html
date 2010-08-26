@@ -17,12 +17,12 @@ test tasks index
 	</tr>
 	{% for nextTask in task_list %}
 	<tr>
-		<td>{{nextTask.name}}</td>
+		<td><a href="/tasks/{{nextTask.id}}">{{nextTask.name}}</a></td>
 	</tr>
 	{% endfor %}
 </table>
 
-<a href="new">new</a>
+<a href="/tasks/new">new</a>
 
 </body>
 </html>

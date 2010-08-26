@@ -2,6 +2,8 @@ new task here;
 <form action="/tasks/create/" method="post">
 {% csrf_token %}
 Task name: <input type="text" name="task_name" id="task_name" value="" />
-
+<br><br>
+Task notes:<Br> <textarea name="task_notes" id="task_notes" value="" rows="10" cols="30" ></textarea>
+<br><br>
 <input type="submit" value="Create" />
 </form>
