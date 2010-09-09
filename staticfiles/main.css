@@ -1,0 +1,91 @@
+.greenbackground
+{
+	background-color: green;
+}
+
+.whitefont
+{
+	color: white;
+}
+
+.blackfont
+{
+	color: black;	
+}
+
+.leftborder 
+{
+	border-left:thin double #000000;	
+}
+
+.rightborder
+{
+	border-right:thin double #000000;
+} 
+
+.topborder 
+{
+	border-top:thin double #000000;
+} 
+
+.bottomborder 
+{
+	border-bottom:thin double #000000;
+}
+
+.currentworktab
+{
+	font-weight: bold;
+	background-color: white;
+	
+}
+
+.selectableworktab A:visited 
+{
+	text-decoration: none;
+}
+.selectableworktab A:link
+{
+	text-decoration: none;
+}
+
+.selectableworktab A:active
+{
+	text-decoration: none;
+}
+
+
+.selectableworktab A:hover 
+{
+	font-weight: bold;
+}
+
+.tabPadding
+{
+	padding-left: 10px;	
+}
+
+ul ol 
+{
+	list-style-type: disc;	
+}
+
+li 
+{
+	display: inline;
+	list-style-type: none;	
+	
+}
+
+#header_banner
+{
+	font-size: 18px;
+}
+
+#workTabs
+{
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2px;
+	font-size: 18px;	
+}

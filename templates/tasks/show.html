@@ -1,6 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}All tasks{% endblock %}
+
+{% block content %}
+
+
+
 Task name: {{ task.name }}
 <br><br>
 Task notes: {{ task.notes }}
 
 <br><br>
 <a href="/tasks/edit/{{task.id}}">Edit</a> <a href="/tasks">Index</a>
+
+
+
+
+{% endblock %}

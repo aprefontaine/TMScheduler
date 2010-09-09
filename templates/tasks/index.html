@@ -1,7 +1,8 @@
-<html>
-<head>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}All tasks{% endblock %}
+
+{% block content %}
+
 
 {% ifnotequal task_name "" %}
 <p>Successfully added task</p>
@@ -24,5 +25,5 @@ test tasks index
 
 <a href="/tasks/new">new</a>
 
-</body>
-</html>
+
+{% endblock %}
