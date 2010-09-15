@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type="text/javascript">
+function setClubNumber() 
+{ 
+var clubList=document.getElementById("clubListID");
+var clubNum=document.getElementById("clubNumberEntry");
+
+var val = clubList[clubList.selectedIndex].value; 
+
+if ( val > 0 ) {
+	clubNum.value = val; 
+} else { 
+	clubNum.value = "<select club>"; 
+} 
+	
+} 
+</script>
+</head>
+<body>
+{% if user %}
+	<p>Welcome, {{ user }}! You can <a href="{{ auth_url }}">sign out</a>.</p> 
+{% else %}
+	<p>Welcome! <a href="{{ auth_url }}">Sign in or register</a> to customize.</p>
+{% endif %}
+
+<h1>User Preferences</h1>
+
+<form action="/prefs/update/" method="post">
+	<label for="prefClub">Club:</label>
+	<input type="text" id="clubNumberEntry" name="clubNumber" 
+		{% if club %}
+			value="{{ club }}"
+		{% else %}
+			value="<select club>"
+		{% endif %}	
+	/> 
+	<select size=10 id="clubListID" name="club_list" onchange="setClubNumber()">
+						<option value="0">-None-</option>
+					{% for club in clubList %}
+						<option value="{{club.Number}}">{{club.Number}} {{club.Name}}</option>
+					{% endfor %}
+	</select>				 
+	<br/>
+	<label for="prefPhone">Phone Number:</label>
+	<input type="text" id="phoneNumberEntry" name="phoneNumber" value={{ phone }}><br/>
+<input type="submit" value="Update Preferences" />
+</form>
+</body>
+</html>

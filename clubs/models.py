@@ -8,6 +8,7 @@ class Club(models.Model):
     Number = models.IntegerField()
     Area = models.IntegerField()
     Division = models.CharField(max_length=20)
+    District = models.CharField(max_length=5)
     LastUpdated = models.DateTimeField(auto_now=True)
     
     def __unicode__(self):

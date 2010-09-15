@@ -22,12 +22,11 @@
   <body>
     <div id="header_banner" class="greenbackground whitefont tabPadding">
     	<br>
-    	{% if username %} 
-    		{{username}} 
+    	{% if user %} 
+    		Welcome,{{user}}! You can <a href="{{ auth_url }}">sign out</a>.
     	{% else %}
-    		Welcome User!
+    		Welcome! <a href="{{ auth_url }}">Sign in</a> to customize.
     	{% endif %}
-	
 	<br>
 	<br>   
 
@@ -40,6 +39,10 @@
 			<li class=""> &nbsp;</li>
 			<li class="selectableworktab whitefont">
 				<a href="/tasks" class="selectableworktab whitefont">Tasks</a>
+			</li>
+			<li class=""> &nbsp;</li>
+			<li class="selectableworktab whitefont">
+				<a href="/clubs" class="selectableworktab whitefont">Clubs</a>
 			</li>
 			<li class="tabPadding"> </li>
 		</ul>

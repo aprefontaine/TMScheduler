@@ -1,13 +1,25 @@
 <h1>Clubs Home</h1>
 
-{% ifnotequal club_name "" %}
-<p>Successfully added club</p>
-{% endifnotequal %}
+<a href="./create/">Add Club</a> | <a href="./import">Import Clubs</a><br/>
 
+{% if not clubContext %}
+
+{% else %}
+	<br/>
+	{% if clubContext.Type == 1 %}
+		Import Completed with:<br>
+		Clubs Added: {{ clubContext.Added }}<br>
+		Clubs already Existing: {{ clubContext.Existing }}<br>
+		Errors: {{ clubContext.Errors }}<br>
+	{% endif %}
+	<br/>
+{% endif %}
 <h2>Club List</h2>
 <table>
 <tr><td>Name</td><td>Number</td><td>Area</td><td>Division</td></tr>
-{% for nextClub in club_list %}
-<tr><td>{{nextClub.Name}}</td><td>{{nextClub.Number}}</td><td>{{nextClub.Area}}</td><td>{{nextClub.Division}}</td></tr>
-{% endfor %}
+{% if clubContext %}
+	{% for nextClub in clubContext.ClubList %}
+	<tr><td>{{nextClub.Name}}</td><td>{{nextClub.Number}}</td><td>{{nextClub.Area}}</td><td>{{nextClub.Division}}</td></tr>
+	{% endfor %}
+{% endif %}
 </table>

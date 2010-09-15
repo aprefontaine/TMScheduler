@@ -14,4 +14,6 @@ urlpatterns = patterns('',
         (r'^update/(?P<object_id>\d+)/?$', 'django.views.generic.create_update.update_object', clubs_dict),
         (r'^delete/(?P<object_id>\d+)/?$', 'django.views.generic.create_update.delete_object', dict(clubs_dict, post_delete_redirect="/clubs/new/") ),
         (r'^add/?$', 'clubs.views.addClub' ),
+        (r'^import/$', 'clubs.views.importClubs' ),
+        (r'^doImportClubs/$', 'clubs.views.doImportClubs' ),
 )

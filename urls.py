@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
-    ('^$', 'django.views.generic.simple.direct_to_template',
-     {'template': 'home.html'}),
+    ('^$', 'mainapp.views.index'),
     (r'^tasks/', include('tasks.urls')),
     (r'^clubs/', include('clubs.urls')),
+    (r'^prefs/', include('userprefs.urls')),
 )
