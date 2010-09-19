@@ -14,7 +14,7 @@ def clubsHome(request):
 #    club_name = messages.get_messages(request) 
     clubContext = ClubContextBase
     clubContext.ClubList = Club.objects.all().order_by('Number') 
-    return render_to_response('clubs/index.html', {'clubContext': clubContext})
+    return render_to_response('clubs/index.html', {'clubContext': clubContext}, context_instance=RequestContext(request))
 
 class ClubContextAdd(ClubContextBase):
     Type = 2
@@ -43,7 +43,9 @@ def addClub(request):
         return HttpResponseRedirect(reverse('clubs.views.clubsHome'))
 
 def importClubs(request):
-    return render_to_response('clubs/ClubImport.html')
+    return render_to_response('clubs/ClubImport.html',
+                              {'test': 'I am the second view.'},
+                              context_instance=RequestContext(request))
 
 class ClubContextImport(ClubContextBase):
     Type = 1

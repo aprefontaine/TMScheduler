@@ -1,5 +1,6 @@
-<html>
-<head>
+{% extends "./userprefs/userbase.html" %}
+
+{% block extra-head %}
 <script type="text/javascript">
 function setClubNumber() 
 { 
@@ -16,14 +17,20 @@ if ( val > 0 ) {
 	
 } 
 </script>
+{% endblock %}
+
+<!-- 
 </head>
 <body>
+ -->
+ 
 {% if user %}
 	<p>Welcome, {{ user }}! You can <a href="{{ auth_url }}">sign out</a>.</p> 
 {% else %}
 	<p>Welcome! <a href="{{ auth_url }}">Sign in or register</a> to customize.</p>
 {% endif %}
 
+{% block content %}
 <h1>User Preferences</h1>
 
 <form action="/prefs/update/" method="post">
@@ -46,5 +53,9 @@ if ( val > 0 ) {
 	<input type="text" id="phoneNumberEntry" name="phoneNumber" value={{ phone }}><br/>
 <input type="submit" value="Update Preferences" />
 </form>
+{% endblock %}
+
+<!-- 
 </body>
 </html>
+ -->

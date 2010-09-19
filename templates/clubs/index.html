@@ -1,6 +1,8 @@
-<h1>Clubs Home</h1>
+{% extends "./clubs/clubsbase.html" %}
 
-<a href="./create/">Add Club</a> | <a href="./import">Import Clubs</a><br/>
+{% block content %}
+
+<h1>Clubs Home</h1>
 
 {% if not clubContext %}
 
@@ -23,3 +25,4 @@
 	{% endfor %}
 {% endif %}
 </table>
+{% endblock %}

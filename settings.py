@@ -27,6 +27,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+#    'django.contrib.auth.context_processors.auth',        What about messages and permissions? Can we use them?
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+#    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'mainapp.context_processors.googleUser',
+)
+
 if has_djangoappengine:
     INSTALLED_APPS = ('djangoappengine',) + INSTALLED_APPS
 

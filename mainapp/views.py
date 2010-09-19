@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.template import RequestContext
 from django.template import Context, loader
 from google.appengine.api import users
 
@@ -9,7 +10,7 @@ def index(request):
     else:
         auth_url = users.create_logout_url(request.path)
     t = loader.get_template('home.html')
-    c = Context({
+    c = RequestContext(request, {
         'user': user,
         'auth_url': auth_url,
     })

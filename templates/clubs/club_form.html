@@ -1,5 +1,6 @@
-<html>
-<body>
+{% extends "./clubs/clubsbase.html" %}
+
+{% block content %}
 <h1>Create Club</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -17,6 +18,4 @@
 	<input type="text" id="clubDistrictEntry" name="clubDistrict"><br/>
 <input type="submit" value="Add Club" />
 </form>
-</body>
-</html>
-
+{% endblock %}

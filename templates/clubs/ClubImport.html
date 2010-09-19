@@ -1,5 +1,16 @@
-<html>
-<body>
+{% extends "./clubs/clubsbase.html" %}
+
+{% block content %}
+<!-- 
+<h1>Testing</h1>
+user: {{user}}<br/>
+Google_user: {{GOOGLE_User}}<br/>
+Google_auth_url: {{GOOGLE_Auth_Url}}<br/>
+messages: {{messages}}<br/>
+perms: {{perms}}<br/>
+<h1>End Test</h1>
+ -->
+ 
 <h1>Import Clubs</h1>
 
 Each line needs to be in the following csv format.
@@ -12,4 +23,4 @@ Each line needs to be in the following csv format.
 </form>
 </body>
 </html>
-
+{% endblock %}

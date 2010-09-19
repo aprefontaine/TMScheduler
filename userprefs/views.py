@@ -26,7 +26,7 @@ def index(request):
             logging.info('userPrefs: no record yet. Why here??')
     clubList = Club.objects.all().order_by('Number')    
     t = loader.get_template('userprefs/index.html')
-    c = Context({
+    c = RequestContext(request, {
         'user': user,
         'auth_url': auth_url,
         'club': club,
