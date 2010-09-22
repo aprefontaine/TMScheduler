@@ -19,8 +19,8 @@ def index(request):
         logging.info('userPrefs index: get_userprefs returns %s' % userPrefs)
         if userPrefs:
             logging.info('userPrefs: %s' % (userPrefs,))
-            club = userPrefs[0].club
-            phone = userPrefs[0].phone
+            club = userPrefs.club
+            phone = userPrefs.phone
         else: 
             # should we ever get here? We should always get a userPref but version of prefs may be 0.
             logging.info('userPrefs: no record yet. Why here??')

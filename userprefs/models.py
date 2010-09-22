@@ -30,8 +30,9 @@ def get_userprefs(user_id=None):
     logging.info("get_userprefs: for uid=%s" % (user_id, ))    
     userprefs = UserPrefs.objects.filter(googleOpenId=user_id)
     if userprefs.count() == 1:
-        logging.info('get_userprefs: Found record! %s' % (userprefs,))    
+        logging.info('get_userprefs: Found record! %s' % (userprefs,))
+        return userprefs[0]
     else:
         logging.info('get_userprefs: Not Found!')    
         userprefs = UserPrefs(googleOpenId=user_id)
-    return userprefs
+        return userprefs
